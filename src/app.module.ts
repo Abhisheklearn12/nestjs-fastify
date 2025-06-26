@@ -1,10 +1,11 @@
+
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { PrismaService } from './prisma/prisma.service';
+import { UserController } from './user.controller';
 
 @Module({
   imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [UserController],
+  providers: [PrismaService],
 })
-export class AppModule {}
+export class AppModule {}  // ✅ This fixes the TS2305 error
